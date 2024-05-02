@@ -21,9 +21,10 @@ pipeline {
             }
             post {
                     success {
-                        emailext body: 'Pipeline succeeded. All stages completed successfully.',
-                                 subject: 'Pipeline Status: Success',
-                                 to: 'gogireddysusmitha75@gmail.com'
+                        emailext attachLog: true,
+                        body: 'Pipeline succeeded. All stages completed successfully.',
+                        subject: 'Pipeline Status: Success',
+                        to: 'gogireddysusmitha75@gmail.com'
                     }
                     failure {
                         emailext body: 'Pipeline failed. Check logs for details.',
