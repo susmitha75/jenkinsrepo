@@ -19,6 +19,18 @@ pipeline {
                 echo 'Running integration tests...'
                 //sh 'mvn integration-test' // Placeholder for running integration tests
             }
+            post {
+                    success {
+                        emailext body: 'Pipeline succeeded. All stages completed successfully.',
+                                 subject: 'Pipeline Status: Success',
+                                 to: 'gogireddysusmitha75@gmail.com'
+                    }
+                    failure {
+                        emailext body: 'Pipeline failed. Check logs for details.',
+                                 subject: 'Pipeline Status: Failure',
+                                 to: 'gogireddysusmitha75@gmail.com'
+                    }
+            }
         }
         stage('Code Analysis') {
             steps {
