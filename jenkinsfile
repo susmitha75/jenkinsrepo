@@ -27,9 +27,10 @@ pipeline {
                         to: 'gogireddysusmitha75@gmail.com'
                     }
                     failure {
-                        emailext body: 'Pipeline failed. Check logs for details.',
-                                 subject: 'Pipeline Status: Failure',
-                                 to: 'gogireddysusmitha75@gmail.com'
+                        emailext attachLog: true,
+                        body: 'Pipeline did not succeeded',
+                        subject: 'Pipeline Status: Failed',
+                        to: 'gogireddysusmitha75@gmail.com'
                     }
             }
         }
