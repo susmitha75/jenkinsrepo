@@ -9,10 +9,22 @@ pipeline {
         }
         stage('Unit and Integration Tests') {
             steps {
-                echo 'Running unit tests using JUnit.'
-                echo 'Running integration tests using Selenium WebDriver.'
+                echo 'Running unit and integration tests using JUnit and Selenium.'
             }
-        }
+            post {
+                success {
+                    emailext attachLog: true,
+                    to: 'gogireddysusmitha75@gmail.com', 
+                    subject: 'Integration Tests Status Email', 
+                    body: 'Integration tests completed successfully'
+                }
+                failure {
+                    emailext attachLog: true,
+                    to: 'gogireddysusmitha75@gmail.com', 
+                    subject: 'Build Status Email', 
+                    body: 'integration tests failed'
+                }
+            }
         stage('Code Analysis') {
             steps {
                 echo 'Integrating code analysis tool - SonarQube.'
