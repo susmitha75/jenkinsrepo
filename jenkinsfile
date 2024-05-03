@@ -24,13 +24,13 @@ pipeline {
                         emailext attachLog: true,
                         body: 'Pipeline succeeded. All stages completed successfully.',
                         subject: 'Pipeline Status: Success',
-                        to: 'gogireddysusmitha75@gmail.com'
+                        to: 'susmithareddy9090@gmail.com'
                     }
                     failure {
                         emailext attachLog: true,
                         body: 'Pipeline did not succeeded',
                         subject: 'Pipeline Status: Failed',
-                        to: 'gogireddysusmitha75@gmail.com'
+                        to: 'susmithareddy9090@gmail.com'
                     }
             }
         }
@@ -72,12 +72,12 @@ pipeline {
         success {
             emailext body: 'Pipeline succeeded. All stages completed successfully.',
                      subject: 'Pipeline Status: Success',
-                     to: 'gogireddysusmitha75@gmail.com'
+                     to: 'susmithareddy9090@gmail.com'
         }
         failure {
             emailext body: 'Pipeline failed. Check logs for details.',
                      subject: 'Pipeline Status: Failure',
-                     to: 'gogireddysusmitha75@gmail.com'
+                     to: 'susmithareddy9090@gmail.com'
         }
     }
 }
