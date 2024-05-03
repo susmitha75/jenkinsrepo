@@ -23,7 +23,7 @@ pipeline {
                     success {
                         emailext attachLog: true,
                         body: 'Pipeline succeeded. All stages completed successfully.',
-                        subject: 'Pipeline Status: Success',
+                        subject: 'Pipeline  Status: Success',
                         to: 'gogireddysusmitha75@gmail.com'
                     }
                     failure {
