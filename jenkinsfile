@@ -17,7 +17,7 @@ pipeline {
                 echo 'Running unit tests...'
                 //sh 'mvn test' // Placeholder for running unit tests with Maven
                 echo 'Running integration tests...'
-                //sh 'mvn integration-test' // Placeholder for running integration tests
+                //sh 'mvn integration-test' // Placeholder for  running integration tests
             }
             post {
                     success {
